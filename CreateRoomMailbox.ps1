@@ -1,7 +1,7 @@
-$AppId = "24560a07-db76-4d8d-ba93-21ebbefaffea"
-$Tenant = "isb0.onmicrosoft.com"
-$CertThumbprint = "B74D418442756942591C0BD2455406EA72A3F295"
-Connect-ExchangeOnline -AppId $AppId -Organization $Tenant -CertificateThumbprint $CertThumbprint
+
+
+Connect-ExchangeOnline -AppId $env:EXO_APP_ID -Organization $env:EXO_TENANT_ID -CertificateThumbprint $env:EXO_CERT_THUMBPRINT
+
 
 # Import CSV
 $mailboxes = Import-Csv -Path "./UsersToMigrate.csv"
