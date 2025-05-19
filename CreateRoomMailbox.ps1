@@ -4,7 +4,7 @@ $CertThumbprint = "B74D418442756942591C0BD2455406EA72A3F295"
 Connect-ExchangeOnline -AppId $AppId -Organization $Tenant -CertificateThumbprint $CertThumbprint
 
 # Import CSV
-$mailboxes = Import-Csv -Path "./mailboxes.csv"
+$mailboxes = Import-Csv -Path "./UsersToMigrate.csv"
 
 foreach ($mbx in $mailboxes) {
     # Create room mailbox
