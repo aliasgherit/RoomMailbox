@@ -6,7 +6,7 @@ on:
       csv_file:
         description: 'CSV file path'
         required: true
-        default: 'mailboxes.csv'
+        default: 'UsersToMigrate.csv'
 
 jobs:
   create-mailboxes:
