@@ -20,3 +20,8 @@ foreach ($mbx in $mailboxes) {
 
 # Disconnect
 Disconnect-ExchangeOnline
+
+      env:
+        EXO_APP_ID: ${{ secrets.EXO_APP_ID }}
+        EXO_TENANT_ID: ${{ secrets.EXO_TENANT_ID }}
+        EXO_CERT_THUMBPRINT: ${{ secrets.EXO_CERT_THUMBPRINT }}
