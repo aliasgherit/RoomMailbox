@@ -1,0 +1,26 @@
+name: Create Room Mailboxes
+
+on:
+  workflow_dispatch:
+    inputs:
+      csv_file:
+        description: 'CSV file path'
+        required: true
+        default: 'mailboxes.csv'
+
+jobs:
+  create-mailboxes:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install ExchangeOnlineManagement
+      run: Install-Module -Name ExchangeOnlineManagement -Force -AllowClobber -Scope CurrentUser
+
+    - name: Run mailbox creation script
+      shell: pwsh
+      run: |
+        Import-Module ExchangeOnlineManagement
+        ./Create-RoomMailbox.ps1
