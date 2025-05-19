@@ -19,8 +19,19 @@ jobs:
     - name: Install ExchangeOnlineManagement
       run: Install-Module -Name ExchangeOnlineManagement -Force -AllowClobber -Scope CurrentUser
 
+    - name: Import Certificate
+      shell: pwsh
+      run: |
+        $pfxBytes = [Convert]::FromBase64String("${{ secrets.EXO_PFX_B64 }}")
+        $pfxPath = "$env:TEMP\EXOCert.pfx"
+        [IO.File]::WriteAllBytes($pfxPath, $pfxBytes)
+        $pwd = ConvertTo-SecureString -String "${{ secrets.EXO_PFX_PASSWORD }}" -AsPlainText -Force
+        $cert = Import-PfxCertificate -FilePath $pfxPath -CertStoreLocation Cert:\CurrentUser\My -Password $pwd
+        Write-Output "Certificate imported: $($cert.Thumbprint)"
+
     - name: Run mailbox creation script
       shell: pwsh
       run: |
         Import-Module ExchangeOnlineManagement
+        Connect-ExchangeOnline -AppId "${{ secrets.EXO_APP_ID }}" -CertificateThumbprint $cert.Thumbprint -Organization "${{ secrets.EXO_TENANT_ID }}"
         ./CreateRoomMailbox.ps1
