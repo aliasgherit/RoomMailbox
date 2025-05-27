@@ -20,4 +20,5 @@ foreach ($mbx in $mailboxes) {
 }
 
 # Disconnect
-Disconnect-ExchangeOnline
+Disconnect-ExchangeOnline -Confirm:$false
+
