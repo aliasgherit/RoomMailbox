@@ -14,7 +14,7 @@ foreach ($mbx in $mailboxes) {
         -DisplayName $mbx.DisplayName `
         -Alias $mbx.Alias `
         -PrimarySmtpAddress $mbx.PrimarySmtpAddress `
-        -SamAccountName $mbx.SamAccountName
+        
 
     Write-Host "Created Room Mailbox: $($mbx.PrimarySmtpAddress)"
 }
