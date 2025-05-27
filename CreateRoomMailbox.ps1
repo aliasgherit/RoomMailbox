@@ -1,6 +1,6 @@
 $AppId = "24560a07-db76-4d8d-ba93-21ebbefaffea"
 $Tenant = "isb0.onmicrosoft.com"
-$CertThumbprint = "B74D418442756942591C0BD2455406EA72A3F295"
+$CertThumbprint = "D22DD41A934398C6C2D07F075E059CF85385C586"
 Connect-ExchangeOnline -AppId $AppId -Organization $Tenant -CertificateThumbprint $CertThumbprint
 
 # Import CSV
