@@ -1,3 +1,3 @@
 PrimarySmtpAddress,Alias,SamAccountName,FirstName,LastName,DisplayName,Name,ExchangeGuid,ArchiveGuid,LegacyExchangeDn,EmailAddresses
-ConfRoom1@isb0.onmicrosoft.com,ConfRoom1,,,,Conference Room 1,ConfRoom1,,,,SMTP:ConfRoom1@isb0.onmicrosoft.com
-ConfRoom2@isb0.onmicrosoft.com,ConfRoom2,,,,Conference Room 2,ConfRoom2,,,,SMTP:ConfRoom2@isb0.onmicrosoft.com
+ConfRoom10@isb0.onmicrosoft.com,ConfRoom1,,,,Conference Room 10,ConfRoom10,,,,SMTP:ConfRoom10@isb0.onmicrosoft.com
+ConfRoom20@isb0.onmicrosoft.com,ConfRoom2,,,,Conference Room 20,ConfRoom20,,,,SMTP:ConfRoom20@isb0.onmicrosoft.com
